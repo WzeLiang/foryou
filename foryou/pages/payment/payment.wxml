@@ -1,0 +1,6 @@
+
+<view class='pay'>
+  <text class='pay-title'>会员注册费用：</text><text class='pay-numb'>￥5</text>
+ 
+</view> 
+<button class='pay-btn' bindtap='tosuccess'>支付</button>

@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/home/home",
+    "pages/membersearch/membersearch",
+    "pages/memberinfo/memberinfo",
+    "pages/payment/payment",
+    "pages/paysuccess/paysuccess",
+    "pages/findpass/findpass",
+    "pages/address_multi/address_multi",
+    "pages/address_single/address_single"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "FOR YOU 货优品"
+  },
+  "debug":false
+}

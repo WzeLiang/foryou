@@ -1,0 +1,26 @@
+/* pages/payment/payment.wxss */
+.pay{
+  padding: 50rpx;
+}
+.pay .pay-title{
+  font-size: 35rpx;
+}
+.pay .pay-numb{
+  font-size: 70rpx;
+  font-weight: 500;
+}
+.pay-btn {
+    width: 90%;
+    height: 80rpx;
+    margin: 50rpx auto;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 80rpx;
+    background-color: #2EA9DF;
+    border-radius: 6rpx;
+    color: #fff;
+}
+
+.pay-btn:active {
+    background-color: #369DC9;
+}

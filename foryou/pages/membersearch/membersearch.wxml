@@ -1,0 +1,16 @@
+<view class='membersearch'>
+    <view class='search-box'>
+      <input class='box-input' type='search' placeholder='输入会员姓名、卡号、电话搜索'></input>
+      <button class='box-btn'>搜索</button>
+    </view>
+    <view class='search-history'>
+     <view class='head'>
+         <view class='head-title'>搜索历史</view>
+      <view class='head-clear'>清空</view>
+     </view>
+      <view class='history-box'>
+          <view class='history-item'>aaa</view>
+          <view class='history-item'>aaaaaaaaaaa</view>
+      </view>
+    </view>
+</view>

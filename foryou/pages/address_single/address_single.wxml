@@ -1,0 +1,114 @@
+<form bindsubmit="savePersonInfo">
+  <view class='title'>必填项</view>
+  <view class="form-list">
+    <view class="form-item">
+      <view class="form-item-hd">姓名：</view>
+      <view class="form-item-bd">
+        <input type="text" placeholder-class="input-placeholder" name="name" value="{{name}}" placeholder="请输入姓名" />
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-item-hd">手机号码：</view>
+      <view class="form-item-bd">
+        <input type="number" placeholder-class="input-placeholder" name="tel" value="{{tel}}" placeholder="请输入手机号码" maxlength="11" />
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-item-hd">密码：</view>
+      <view class="form-item-bd">
+        <input type="password" placeholder-class="input-placeholder" name="pass" value="{{password}}" placeholder="请输入密码" maxlength="11" />
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-item-hd">确认密码：</view>
+      <view class="form-item-bd">
+        <input type="password" placeholder-class="input-placeholder" name="pass" value="{{password2}}" placeholder="再次输入密码" maxlength="11" />
+      </view>
+    </view>
+
+
+  </view>
+  <view class='title2'>选填项</view>
+  <view class="form-list">
+
+    <view class="form-item">
+      <view class="form-item-hd">身份证: </view>
+      <view class="form-item-bd">
+        <input type="number" placeholder-class="input-placeholder" name="code" value="{{code}}" placeholder="请输入身份证号" maxlength="18" />
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-item-hd">邮箱：</view>
+      <view class="form-item-bd">
+        <input type="email" placeholder-class="input-placeholder" name="email" value="{{password}}" placeholder="请输入邮箱" />
+      </view>
+    </view>
+
+    <!-- <view class="form-item">
+      <view class="form-item-hd">地区：</view>
+      <view class="form-item-bd" bindtap="showDistpicker">
+        <view class="input {{!provinceName[provinceSelIndex] ? 'input-placeholder' : ''}}">
+          <block wx:if="{{provinceName[provinceSelIndex]}}">{{provinceName[provinceSelIndex]}} {{cityName[citySelIndex]}} {{districtName[districtSelIndex]}}</block>
+          <block wx:else>请选择所在地区</block>
+        </view>
+        <input type="text" name="province" value="{{provinceName[provinceSelIndex]}}" class="hidden" />
+        <input type="text" name="city" value="{{cityName[citySelIndex]}}" class="hidden" />
+        <input type="text" name="district" value="{{districtName[districtSelIndex]}}" class="hidden" />
+      </view>
+    </view> -->
+
+    <view class="form-item">
+      <view class="form-item-hd">地区：</view>
+      <view class="form-item-bd" bindtap="selectDistrict">
+        <view class="input {{!areaInfo ? 'input-placeholder' : ''}}">
+          <block wx:if="{{areaInfo}}">{{areaInfo}}</block>
+          <block wx:else>请选择所在地区</block>
+        </view>
+        <input type="text" name="province" value="{{provinces[value[0]].name}}" class="hidden" />
+        <input type="text" name="city" value="{{citys[value[1]].name}}" class="hidden" />
+        <input type="text" name="district" value="{{areas[value[2]].name}}" class="hidden" />
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="form-item-hd">详细地址：</view>
+      <view class="form-item-bd">
+        <input type="text" placeholder-class="input-placeholder" name="address" value="{{address}}" placeholder="请输入详细地址" maxlength="20" />
+      </view>
+    </view>
+  </view>
+
+ 
+  <button formType="submit" class="save-btn">保 存</button>
+</form>
+
+
+
+<view class="dialog-mask " style="z-index:11;visibility:{{addressMenuIsShow ? 'visible': 'hidden'}}" bindtap="hideCitySelected" />
+<!--城市三级联动-->
+<!--使用动画时不能wx:if="{{city.length>0&&isVisible}}" ，不能hidden=''属性否则无动画效果-->
+<view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <view class='picker-btn'>
+    <text catchtap="cityCancel">取消</text>
+    <text  catchtap="citySure">确定</text>
+  </view>
+  <!--"可以显示默认的城市，使用后级联选择城市反应很慢就不使用了-->
+  <picker-view style="width: 100%;" bindchange="cityChange" value="{{value}}" wx:key="" class='picker-content'>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" class="picker-item">
+        {{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" class="picker-item" wx:key="">
+        {{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areas}}" class="picker-item" wx:key="">
+        {{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+
+<view class="mask" catchtap="distpickerCancel" hidden="{{!showDistpicker}}"></view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

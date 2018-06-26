@@ -1,0 +1,9 @@
+<!--pages/findpass/findpass.wxml-->
+<view>{{model}}</view>
+<view>{{pixelRatio}}</view>
+<view>{{windowWidth}}</view>
+<view>{{windowHeight}}</view>
+<view>{{language}}</view>
+<view>{{version}}</view>
+<view>{{platform}}</view>
+<view>{{system}}</view>

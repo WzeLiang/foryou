@@ -1,0 +1,9 @@
+<view class='paysuccess'>
+  <view class='title'>会员注册完成！</view>
+  <view class='content'>您已经注册成功，下次打开小程序可以查看您的会员信息。</view>
+  <view class='member'>
+    <text class='member-title'>会员卡号：</text>
+     <text class='member-ID'>Shanghai0212</text>
+  </view>
+</view>
+<button class='success-btn'>我知道了</button>

@@ -1,0 +1,68 @@
+<view id='home' class="{{selected?'show':'hidden'}}">
+  <view class='swiper-box'>
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+      <block wx:for="{{movies}}" wx:for-index="index">    
+        <swiper-item>    
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill" />    
+        </swiper-item>    
+      </block>    
+    </swiper>  
+  </view> 
+   <view class='content'>
+      <view class='content-title'>大牌联手</view>
+      <view class='explain'>够大牌 够方便</view>
+       <view class='logobox'>
+        <view class='logoitem' wx:for="{{logourllist}}">
+          <image src='{{item}}' bindtap="previewImage"></image>
+        </view>
+      </view>
+      <view class='section'>
+          <view class='section-title'>关于我们</view>
+          <view class='section-content'>
+            京东于2004年正式涉足电商领域。2016年，京东集团市场交易额达到9392亿元*，净收入达到2601亿元，同比增长43%。京东是中国收入规模最大的互联网企业。2016年7月，京东入榜2016《财富》全球500强，成为中国首家、唯一入选的互联网企业。
+          </view>
+      </view>
+       <view class='section'>
+          <view class='section-title'>商家合作联盟</view>
+          <view class='section-content'>
+            京东于2004年正式涉足电商领域。2016年，京东集团市场交易额达到9392亿元*，净收入达到2601亿元，同比增长43%。京东是中国收入规模最大的互联网企业。2016年7月，京东入榜2016《财富》全球500强，成为中国首家、唯一入选的互联网企业。
+          </view>
+      </view>
+   </view>
+</view>
+
+<view class="{{selected1?'show':'hidden'}}" id='member'>
+    <view class='member-title'>会员信息</view>
+    <view class='member-box'>
+        <view class='item member-name'>
+          <view class='item-left'>会员姓名</view>
+           <view class='item-right'>王泽良</view>
+        </view>
+        <view class='item member-numb'>
+          <view class='item-left'>会员号</view>
+           <view class='item-right'>33672098</view>
+        </view>
+        <view class='item member-tel'>
+          <view class='item-left'>手机号</view>
+           <view class='item-right'>14791286530</view>
+        </view>
+        <view class='item member-code'>
+          <view class='item-left'>身份证</view>
+           <view class='item-right'>140203199207300812</view>
+        </view>
+        <view class='item member-email'>
+          <view class='item-left'>邮箱</view>
+           <view class='item-right'>14791286530@163.com</view>
+        </view>
+        <view class='item member-adress'>
+          <view class='item-left'>地址</view>
+           <view class='item-right'>上海市浦东新区新建大厦</view>
+        </view>
+        
+    </view>
+</view>
+
+ <view class='tabbar'>
+      <view class="{{selected?'tabbaractive':'tabbardefault'}}" bindtap="selected">首页</view>
+      <view class="{{selected1?'tabbaractive':'tabbardefault'}}" bindtap="selected1">会员信息</view>
+   </view>
